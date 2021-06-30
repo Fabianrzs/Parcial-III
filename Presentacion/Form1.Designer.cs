@@ -57,19 +57,20 @@ namespace Presentacion
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(73, 248);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 248);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(437, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(614, 150);
             this.dataGridView1.TabIndex = 2;
             // 
             // BtnCargarTabla
             // 
-            this.BtnCargarTabla.Location = new System.Drawing.Point(576, 309);
+            this.BtnCargarTabla.Location = new System.Drawing.Point(675, 375);
             this.BtnCargarTabla.Name = "BtnCargarTabla";
             this.BtnCargarTabla.Size = new System.Drawing.Size(113, 23);
             this.BtnCargarTabla.TabIndex = 3;
             this.BtnCargarTabla.Text = "Cargar Tabla";
             this.BtnCargarTabla.UseVisualStyleBackColor = true;
+            this.BtnCargarTabla.Click += new System.EventHandler(this.BtnCargarTabla_Click);
             // 
             // Form1
             // 

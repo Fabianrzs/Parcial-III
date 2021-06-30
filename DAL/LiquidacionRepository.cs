@@ -146,7 +146,7 @@ namespace DAL
             }
         }
 
-        public List<Liquidacion> ConsultarLaboratorio()
+        public List<Liquidacion> ConsultarLiquidacioness()
         {
             List<Liquidacion> List = new List<Liquidacion>();
             using (var command = _connection.CreateCommand())

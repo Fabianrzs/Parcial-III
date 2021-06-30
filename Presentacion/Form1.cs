@@ -79,5 +79,27 @@ namespace Presentacion
                 MessageBox.Show(response.Mensaje);
             }
         }
+
+        private void BtnCargarTabla_Click(object sender, EventArgs e)
+        {
+            Loadtable();
+        }
+
+        private void Loadtable()
+        {
+
+            ConsultaResponseLiquidacionestabla servicios = service.ConsularLiquidacion();
+
+            if (!servicios.Error)
+            {
+                dataGridView1.DataSource = servicios.Liquidaciones;
+            }
+            else
+            {
+                MessageBox.Show(servicios.Message);
+            }
+
+
+        }
     }
 }

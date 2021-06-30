@@ -64,10 +64,53 @@ namespace BLL
         }
 
 
+        public ConsultaResponseLiquidacionestabla ConsularLiquidacion()
+        {
+            try
+            {
+                connection.Open();
+                return new ConsultaResponseLiquidacionestabla(repository.ConsultarLiquidacioness());
+
+            }
+            catch (Exception e) { return new ConsultaResponseLiquidacionestabla(e.Message); }
+            finally { connection.Close(); }
+        }
+
+        public class ConsultaResponseLiquidacionestabla
+        {
+            public List<Liquidacion> Liquidaciones { get; set; }
+            public string Message { get; set; }
+            public bool Error { get; set; }
+
+
+            public ConsultaResponseLiquidacionestabla(List<Liquidacion> liquidacion)
+            {
+                Liquidaciones = liquidacion;
+                Error = false;
+            }
+
+            public ConsultaResponseLiquidacionestabla(string message)
+            {
+                Message = message;
+                Error = true;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //---------------------Carga de archivo Para validar --------------------
-        
+
         public ConsultaResponseLiquidacion ConsularLiquidacion(string ruta)
         {
             try

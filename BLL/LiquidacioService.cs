@@ -26,7 +26,24 @@ namespace BLL
             {
                 connection.Open();
 
+                Cargo cargo = repository.ValCodigoCargo(liquidacion.CodigoCargo);
+                Proyecto proyecto = repository.ValCodigoProyecto(liquidacion.CodigoProyecto);
 
+                if (proyecto != null) { }
+                {
+                    if (proyecto.NombreProyecto.Equals(seleccion))
+                    {
+                        if (cargo != null)
+                        {
+                            
+                        }
+                    }
+                }
+
+                    
+
+
+                repository.GuardarLiquidacion(liquidacion);
 
 
                 return false;
@@ -91,7 +108,7 @@ namespace BLL
             try
             {
                 connection.Open();
-                return new CargaResponseProyecto(repository.ConsultarServicio());
+                return new CargaResponseProyecto(repository.ConsultarProyectos());
             }
             catch (Exception e) { return new CargaResponseProyecto(e.ToString()); }
             finally { connection.Close(); }

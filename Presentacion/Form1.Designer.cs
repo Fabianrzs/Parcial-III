@@ -31,19 +31,22 @@ namespace Presentacion
         {
             this.CbxProyectos = new System.Windows.Forms.ComboBox();
             this.BtnCargar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BtnCargarTabla = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // CbxProyectos
             // 
             this.CbxProyectos.FormattingEnabled = true;
-            this.CbxProyectos.Location = new System.Drawing.Point(227, 134);
+            this.CbxProyectos.Location = new System.Drawing.Point(190, 89);
             this.CbxProyectos.Name = "CbxProyectos";
             this.CbxProyectos.Size = new System.Drawing.Size(121, 21);
             this.CbxProyectos.TabIndex = 0;
             // 
             // BtnCargar
             // 
-            this.BtnCargar.Location = new System.Drawing.Point(419, 132);
+            this.BtnCargar.Location = new System.Drawing.Point(364, 89);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(75, 23);
             this.BtnCargar.TabIndex = 1;
@@ -51,15 +54,35 @@ namespace Presentacion
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(73, 248);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(437, 150);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // BtnCargarTabla
+            // 
+            this.BtnCargarTabla.Location = new System.Drawing.Point(576, 309);
+            this.BtnCargarTabla.Name = "BtnCargarTabla";
+            this.BtnCargarTabla.Size = new System.Drawing.Size(113, 23);
+            this.BtnCargarTabla.TabIndex = 3;
+            this.BtnCargarTabla.Text = "Cargar Tabla";
+            this.BtnCargarTabla.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnCargarTabla);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.CbxProyectos);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +91,8 @@ namespace Presentacion
 
         private System.Windows.Forms.ComboBox CbxProyectos;
         private System.Windows.Forms.Button BtnCargar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button BtnCargarTabla;
     }
 }
 

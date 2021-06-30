@@ -37,6 +37,23 @@ namespace DAL
             return null;
         }
 
+        public Cargo ValCodigoPago(decimal ValorHora)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.Parameters.Add("@ValorHora", SqlDbType.Decimal).Value = ValorHora;
+                command.CommandText = "Select * From Cargo where ValorHora = @ValorHora";
+                var dataReader = command.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        return MapToCargo(dataReader);
+                    }
+                }
+            }
+            return null;
+        }
 
         public Cargo ValCodigoCargo(string CodCargo)
         {

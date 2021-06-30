@@ -43,7 +43,17 @@ namespace BLL
                             {
                                 liquidacion.ValoraPagar = cargo.ValorHora * liquidacion.HorasTrabajadas;
                             }
-                            repository.GuardarLiquidacion(liquidacion); return true;
+                            repository.GuardarLiquidacion(liquidacion); return false;
+                        }
+                        else
+                        {
+                            cargo = repository.ValCodigoPago(liquidacion.ValoraPagar / liquidacion.HorasTrabajadas);
+
+                            if (cargo != null)
+                            {
+                                liquidacion.CodigoCargo = cargo.CodigoCargo;
+                                repository.GuardarLiquidacion(liquidacion); return false;
+                            }
                         }
                     }
                 }

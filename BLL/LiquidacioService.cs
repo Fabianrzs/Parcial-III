@@ -29,29 +29,28 @@ namespace BLL
                 Cargo cargo = repository.ValCodigoCargo(liquidacion.CodigoCargo);
                 Proyecto proyecto = repository.ValCodigoProyecto(liquidacion.CodigoProyecto);
 
-                if (proyecto != null) { }
+                if (proyecto != null)
                 {
-                    if (proyecto.NombreProyecto.Equals(seleccion))
+                    if (proyecto.NombreProyecto.Equals(seleccion)) 
                     {
                         if (cargo != null)
                         {
-                            
+                            if ((cargo.ValorHora * liquidacion.HorasTrabajadas) == liquidacion.ValoraPagar)
+                            {
+                                repository.GuardarLiquidacion(liquidacion); return true;
+                            }
+                            else
+                            {
+                                liquidacion.ValoraPagar = cargo.ValorHora * liquidacion.HorasTrabajadas;
+                            }
+                            repository.GuardarLiquidacion(liquidacion); return true;
                         }
                     }
                 }
-
-                    
-
-
-                repository.GuardarLiquidacion(liquidacion);
-
-
                 return false;
             }
             catch (Exception e) { return false; }
-            finally { connection.Close(); }
-
-            
+            finally { connection.Close(); }  
         }
 
 

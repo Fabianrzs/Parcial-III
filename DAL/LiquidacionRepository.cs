@@ -203,8 +203,8 @@ namespace DAL
 
             Liquidacion liquidacion = new Liquidacion()
             {
-                CodigoCargo = datosEstudiante[0],
-                CodigoProyecto = datosEstudiante[1],
+                CodigoCargo = datosEstudiante[1],
+                CodigoProyecto = datosEstudiante[0],
                 Identificacion = datosEstudiante[2],
                 Nombre = datosEstudiante[3],
                 HorasTrabajadas=Convert.ToDecimal(datosEstudiante[4]),

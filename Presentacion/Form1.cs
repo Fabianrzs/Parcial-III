@@ -48,15 +48,9 @@ namespace Presentacion
                     }
                     else { log++; }
                 }
-                if (log > 0)
-                {
-                    string ruta = "C:/Users/WIN10/Desktop/Practica_Preparcial/resentacion/bin/Debug";
-                    MessageBox.Show($"Archivos Resportados {log + correcto}\nArchivos Correctos {correcto}\nArchivos con Error {log}\nVarifique en la ruta {ruta}", "Reporte de Archivos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"Archivos Resportados {log + correcto}\nArchivos Correctos {correcto}\nArchivos con Error {log}", "Reporte de Archivos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                MessageBox.Show($"Archivos Resportados {log + correcto}\nArchivos Correctos {correcto}\nArchivos con Error {log}", "Reporte de Archivos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
